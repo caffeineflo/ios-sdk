@@ -7,7 +7,7 @@
 
 /*!
  * @header MKTSecuritySignature
- * @discussion The MarketoConfig class is used for secure communication.
+ * @discussion The MKTSecuritySignature class is used for secure communication.
  * @updated 2015-04-29
  */
 
@@ -15,13 +15,40 @@
 
 @interface MKTSecuritySignature : NSObject
 
+/*!
+ * Returns a MKTSecuritySignature Object .
+ * @return instance of class MKTSecuritySignature.
+ */
 -(id)initWithAccessKey:(NSString *)accessKey signature:(NSString *)signature timestamp:(NSString *)timestamp  email:(NSString *)email;
 
-
+/*!
+ * Returns a AccessKey .
+ * @return NSString containing AccessKey
+ */
 - (NSString *)getAccessKey;
+
+/*!
+ * Returns a Signature .
+ * @return NSString containing Signature
+ */
 - (NSString *)getSignature;
+
+/*!
+ * Returns a TimeStamp .
+ * @return NSString containing TimeStamp
+ */
 - (NSString *)getTimeStamp;
+
+/*!
+ * Returns a getEmail .
+ * @return NSString containing Email
+ */
 - (NSString *)getEmail;
+
+/*!
+ * Returns MKTSecuritySignature valid or not  .
+ * @return BOOL for MKTSecuritySignature is Valid .
+ */
 - (BOOL)isValid;
 
 @end
