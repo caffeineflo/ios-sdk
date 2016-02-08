@@ -64,7 +64,7 @@
 /*!
  * Reports all events immediately to the Marketo server
  */
-- (void) reportAllAction;
+- (void) reportAllActions;
 
 /*!
  * This function updates a single lead record from Marketo.
