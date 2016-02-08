@@ -61,6 +61,10 @@
  */
 - (void) reportAction:(NSString*)actionName withMetaData:(MarketoActionMetaData *) metaData;
 
+/*!
+ * Reports all events immediately to the Marketo server
+ */
+- (void) reportAllAction;
 
 /*!
  * This function updates a single lead record from Marketo.
