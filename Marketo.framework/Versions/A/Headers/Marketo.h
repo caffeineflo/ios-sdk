@@ -31,7 +31,6 @@
  */
 + (Marketo*) sharedInstance;
 
-
 /*! 
  * Initializes Marketo SDK. This method should be called before calling any other Marketo SDK method.
  * @param appSecret An app secret used to initialize the app
