@@ -30,8 +30,8 @@ s.vendored_frameworks = "Marketo.framework"
 s.frameworks          = 'SystemConfiguration', 'Security', 'CoreTelephony'
 s.library			  = 'sqlite3'
 s.resource_bundles 	  = {
-    'Marketo-iOS-SDK' => [
-        'Pod/**/*.bundle'
+    'MKTResources' => [
+        'Pod/**/*.{png,plist,storyboard}'
     ]
 }
 end
