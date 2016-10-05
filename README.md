@@ -1,10 +1,13 @@
-# Marketo Mobile SDK for iOS 0.6.4
+# Marketo Mobile SDK for iOS 0.7.0
 
 The Marketo Mobile SDK allows integration with Marketo Mobile Engagement (MME).  
 
 Installation instructions and more are [here](http://developers.marketo.com/documentation/mobile/ "Marketo for Mobile").
 
 Change Log
+
+v0.7.0
+- Using UNNotification to handle push received while app is in foreground with local a notificaiton
 
 v0.6.4
 - Exposed method [MarketoSDK reportAll] to immediately send events
