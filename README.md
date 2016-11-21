@@ -146,7 +146,6 @@ sharedInstance.initializeWithMunchkinID("munchkinAccountId", appSecret: "secretK
 
 ###### Objective-C
 ```Objective-C
-// macro for iOS10
 #import <UserNotifications/UserNotifications.h>
 ```
 ###### Swift
@@ -173,7 +172,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
     
     // ...
 
-    if ([UIAlertController class])
+    if ([UNUserNotificationCenter class])
     {
         UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
         center.delegate = self;
@@ -206,7 +205,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
 }
 ```
 ###### Swift
-```Swift```
+```Swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
     // ...
@@ -296,11 +295,13 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent noti
 
 ###### Objective-C
 ```Objective-C
+#ifdef __IPHONE_10_0
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void(^)())completionHandler {
     [[Marketo sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
 }
+#endif
 ```
 ###### Swift
 ```Swift
@@ -322,13 +323,14 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 ## iOS 10 Implementation
 ###### Objective-C
 ```Objective-C
+#ifdef __IPHONE_10_0
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options{
     return [[Marketo sharedInstance] application:application
                                          openURL:url
                                sourceApplication:nil
                                       annotation:nil];
 }
-
+#endif
 ```
 ###### Swift
 ```Swift
