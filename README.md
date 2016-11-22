@@ -183,6 +183,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
                                   
                               }
                           }];
+        [application registerForRemoteNotifications];
     }
     else if ([application respondsToSelector:@selector (registerUserNotificationSettings:)])
     {
