@@ -245,10 +245,9 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 ```
 ###### Swift
 ```Swift
-private func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-    Marketo.sharedInstance().handlePushNotification(userInfo)
-    completionHandler(UIBackgroundFetchResult.newData)
-}
+func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+      Marketo.sharedInstance().handlePushNotification(userInfo)
+  }
 ```
 
 #####5. Handle Local notification : To handle Local notifications received from Marketo SDK, put the below code in AppDelegate. It helps Marketo SDK to handle push notification while app is in foreground.
