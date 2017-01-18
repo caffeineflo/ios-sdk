@@ -1,10 +1,13 @@
-# Marketo Mobile SDK for iOS 0.7.1
+# Marketo Mobile SDK for iOS 0.7.4
 
 The Marketo Mobile SDK allows integration with Marketo Mobile Engagement (MME).  
 
 Installation instructions and more are [here](http://developers.marketo.com/documentation/mobile/ "Marketo for Mobile").
 
 Change Log
+
+v0.7.4
+- Exposed removeDevicePushToken() method
 
 v0.7.1
 - Handling notification in loadingOptions for iOS 10 to track tap activity when app is closed.
@@ -44,7 +47,7 @@ If you encounter issues using or integrating this plugin, please file a support 
 
 ##Install Framework via cocoapods 
 
-#####1. Install CocoaPods.
+##Expose removeDevicePushToken() method###1. Install CocoaPods.
 
 ```Shell 
 sudo gem install cocoapods 
@@ -238,6 +241,17 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
     // Register the push token with Marketo
     Marketo.sharedInstance().registerPushDeviceToken(deviceToken)
 }
+```
+
+######The token can also be unregistered
+
+###### Objective-C
+```Objective-C
+[[Marketo sharedInstance] unregisterPushDeviceToken];
+```
+###### Swift
+```Swift
+Marketo.sharedInstance().unregisterPushDeviceToken
 ```
 
 #####5. Handle push notification : To handle push notifications received from Marketo, put the following code in AppDelegate.
