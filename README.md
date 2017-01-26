@@ -6,22 +6,22 @@ Installation instructions and more are [here](http://developers.marketo.com/docu
 
 Change Log
 
-v0.7.4
+v0.7.4 (Upcoming)
 - Exposed removeDevicePushToken() method
 
-v0.7.1
+v0.7.1 (November 24, 2016)
 - Handling notification in loadingOptions for iOS 10 to track tap activity when app is closed.
 
-v0.7.0
-- Using UNNotification to handle push received while app is in foreground with a local notificaiton
+v0.7.0 (October 5, 2016)
+- Using UNNotification to handle push received while app is in foreground with a local notification
 
-v0.6.4
+v0.6.4 (August 23, 2016)
 - Exposed method [MarketoSDK reportAll] to immediately send events
 
-v0.6.3
+v0.6.3 (July 15, 2016)
 - Support for InApp display frequnecy once.
 
-v0.6.0
+v0.6.0 (June, 11 2016)
 - InApp Notifications
 
 v0.5.1 - v0.5.3
