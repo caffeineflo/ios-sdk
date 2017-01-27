@@ -243,7 +243,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 }
 ```
 
-######The token can also be unregistered
+######The token can also be unregistered when user logs out.
 
 ###### Objective-C
 ```Objective-C
@@ -253,6 +253,8 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 ```Swift
 Marketo.sharedInstance().unregisterPushDeviceToken
 ```
+
+######**_Note_** To re-register the push token extract the code from step 3 into an AppDelegate method and call form the ViewController login method.
 
 #####5. Handle push notification : To handle push notifications received from Marketo, put the following code in AppDelegate.
 
