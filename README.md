@@ -7,6 +7,7 @@ Installation instructions and more are [here](http://developers.marketo.com/docu
 Change Log
 
 v0.7.4 (Upcoming)
+- Deeplink in push notification now opens after forcefully closing the app
 - Exposed removeDevicePushToken() method
 
 v0.7.1 (November 24, 2016)
@@ -283,8 +284,8 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 ```
 ###### Swift
 ```Swift
-func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-    Marketo.sharedInstance().application(application, didReceive: notification)
+func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+    return Marketo.sharedInstance().application(application, open: url, sourceApplication: nil, annotation: nil)
 }
 ```
 
@@ -354,7 +355,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
                                sourceApplication:nil
                                       annotation:nil];
 }
-#elif
+#endif
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
@@ -364,7 +365,6 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
                                sourceApplication:nil
                                       annotation:nil];
 }
-#endif
 ```
 ###### Swift
 ```Swift
